@@ -25,6 +25,8 @@ module.exports.sendNotification = async (post) => {
         url: post.url,
     });
 
+    console.log(payload);
+
     suscripciones.forEach( suscripcion => {
         webpush.sendNotification(suscripcion.Suscripcion, payload)
             .catch( err => {
